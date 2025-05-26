@@ -1,14 +1,12 @@
-// main.js
-
 function renderSection(sectionId, title, people) {
   const section = document.getElementById(sectionId);
   section.innerHTML = `
-    <h3 class="text-3xl font-bold mb-8 text-center text-gradient bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">${title}</h3>
-    <div class="flex flex-wrap gap-8 justify-center">
+    <h3 style="text-align:center;font-size:1.35rem;color:#4b5563;margin-bottom:1em;">${title}</h3>
+    <div class="people">
       ${people.map(person => `
-        <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center p-6 w-56 group relative overflow-hidden">
-          <img src="${person.img}" alt="${person.name}" class="w-28 h-28 rounded-full object-cover border-4 border-blue-200 mb-4 group-hover:scale-105 transition-transform duration-300" />
-          <span class="font-semibold text-lg text-gray-800 group-hover:text-blue-600 transition-colors duration-200">${person.name}</span>
+        <div class="person">
+          <img src="${person.img}" alt="${person.name}" />
+          <div class="person-name">${person.name}</div>
         </div>
       `).join('')}
     </div>
