@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Quantus</title>
+  <style>
+    body {
+      background: #f7fafc;
+      color: #222;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 24px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 0.25em;
+      color: #3b3663;
+    }
+    h2 {
+      font-size: 1.25rem;
+      text-align: center;
+      color: #6b7280;
+      margin-bottom: 2.5em;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    section {
+      margin-bottom: 2.5em;
+    }
+    .people {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+    }
+    .person {
+      width: 150px;
+      background: #f3f4f6;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      padding: 16px;
+      text-align: center;
+      transition: box-shadow 0.2s;
+    }
+    .person:hover {
+      box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+    }
+    .person img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #a5b4fc;
+      margin-bottom: 10px;
+    }
+    .person-name {
+      font-weight: 600;
+      color: #3730a3;
+      font-size: 1.05rem;
+    }
+    .community-guidelines {
+      background: #e0e7ff;
+      border-radius: 10px;
+      padding: 24px;
+      margin-top: 2.5em;
+      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.07);
+    }
+    .community-guidelines h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1em;
+      color: #3730a3;
+      font-weight: bold;
+    }
+    .community-guidelines ul {
+      padding-left: 1.5em;
+      color: #374151;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 8px;
+      }
+      .people {
+        flex-direction: column;
+        align-items: center;
+      }
+      .person {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>About Us</h1>
+    <h2>quantus</h2>
+
+    <section id="founders"></section>
+    <section id="faculty"></section>
+    <section id="core"></section>
+    <section id="working"></section>
+
+    <section class="community-guidelines">
+      <h3>Community Guidelines</h3>
+      <ul>
+        <li>Be respectful and supportive to all members.</li>
+        <li>Participate actively and contribute positively.</li>
+        <li>Uphold the values and mission of Quantus.</li>
+        <li>No discrimination, harassment, or hate speech.</li>
+        <li>Have fun and help each other grow!</li>
+      </ul>
+    </section>
+  </div>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
