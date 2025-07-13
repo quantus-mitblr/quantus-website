@@ -32,6 +32,7 @@ once finalized will be placed here
 
 */
 
+/* -------------------------- GLOBAL STYLES ------------------------- */
 
 body {
     font-family: "Poppins", sans-serif;
@@ -94,3 +95,6 @@ ul {
 .small-text {
     font-size: 12px;
 }
+
+
+/* --------------------------  COMPONENTS  ------------------------- */
