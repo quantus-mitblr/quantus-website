@@ -32,6 +32,8 @@ export default function Events() {
         return 'text-cyan-400'
       case 'bootcamp':
         return 'text-green-400'
+      case 'exhibition':
+        return 'text-orange-400'
       default:
         return 'text-gray-400'
     }
@@ -47,6 +49,8 @@ export default function Events() {
         return 'bg-cyan-500/20'
       case 'bootcamp':
         return 'bg-green-500/20'
+      case 'exhibition':
+        return 'bg-orange-500/20'
       default:
         return 'bg-gray-500/20'
     }
@@ -79,7 +83,7 @@ export default function Events() {
             EVENTS
           </motion.p>
           <motion.h2 
-            className="text-4xl lg:text-5xl font-bold"
+            className="text-4xl lg:text-5xl font-bold mb-6"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
@@ -87,6 +91,21 @@ export default function Events() {
           >
             Our Journey Through Innovation
           </motion.h2>
+          
+          {/* View All Events Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.8 }}
+          >
+            <Link 
+              href="/events"
+              className="inline-block bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
+            >
+              View All Events →
+            </Link>
+          </motion.div>
         </motion.div>
         
         {/* Navigation and Events Container */}

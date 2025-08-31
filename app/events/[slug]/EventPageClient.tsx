@@ -20,6 +20,8 @@ export default function EventPageClient({ event }: EventPageClientProps) {
         return 'text-cyan-400'
       case 'hackathon':
         return 'text-green-400'
+      case 'exhibition':
+        return 'text-orange-400'
       default:
         return 'text-gray-400'
     }
@@ -35,6 +37,8 @@ export default function EventPageClient({ event }: EventPageClientProps) {
         return 'bg-cyan-500/20 border-cyan-500/30'
       case 'hackathon':
         return 'bg-green-500/20 border-green-500/30'
+      case 'exhibition':
+        return 'bg-orange-500/20 border-orange-500/30'
       default:
         return 'bg-gray-500/20 border-gray-500/30'
     }
@@ -104,7 +108,7 @@ export default function EventPageClient({ event }: EventPageClientProps) {
               className="mb-8"
             >
               <Link 
-                href="/#events" 
+                href="/events" 
                 className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="mr-2">
@@ -188,7 +192,7 @@ export default function EventPageClient({ event }: EventPageClientProps) {
               transition={{ delay: 0.7 }}
             >
               <a
-                href={event.eventUrl}
+                // href={event.eventUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"

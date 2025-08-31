@@ -15,6 +15,8 @@ export default function EventsPage() {
         return 'text-cyan-400'
       case 'hackathon':
         return 'text-green-400'
+      case 'exhibition':
+        return 'text-orange-400'
       default:
         return 'text-gray-400'
     }
@@ -30,6 +32,8 @@ export default function EventsPage() {
         return 'bg-cyan-500/20 border-cyan-500/30'
       case 'hackathon':
         return 'bg-green-500/20 border-green-500/30'
+      case 'exhibition':
+        return 'bg-orange-500/20 border-orange-500/30'
       default:
         return 'bg-gray-500/20 border-gray-500/30'
     }

@@ -3,6 +3,7 @@
 import { useTheme } from 'next-themes'
 import React, { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
+import Link from 'next/link'
 
 export default function Header() {
     const { theme } = useTheme()
@@ -23,22 +24,24 @@ export default function Header() {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
             >
-                {mounted ? (
-                    <motion.img 
-                        src={"/assests/images/logo.png"} 
-                        alt="Logo" 
-                        className="h-8 w-auto" 
-                        whileHover={{ scale: 1.1, rotate: 360 }}
-                        transition={{ duration: 0.5 }}
-                    />
-                ) : <img src={"/assests/images/logo.png"} alt="Logo" className="h-8 w-auto" />}
-                <motion.p 
-                    className="text-2xl font-bold text-white"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
-                >
-                    Quantus
-                </motion.p>
+                <Link href="/" className="flex items-center gap-4">
+                    {mounted ? (
+                        <motion.img 
+                            src={"/assests/images/logo.png"} 
+                            alt="Logo" 
+                            className="h-8 w-auto" 
+                            whileHover={{ scale: 1.1, rotate: 360 }}
+                            transition={{ duration: 0.5 }}
+                        />
+                    ) : <img src={"/assests/images/logo.png"} alt="Logo" className="h-8 w-auto" />}
+                    <motion.p 
+                        className="text-2xl font-bold text-white"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.2 }}
+                    >
+                        Quantus
+                    </motion.p>
+                </Link>
             </motion.div>
             <motion.nav
                 initial={{ x: 50, opacity: 0 }}
@@ -50,31 +53,31 @@ export default function Header() {
                         whileHover={{ y: -2 }}
                         transition={{ duration: 0.2 }}
                     >
-                        <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200">Home</a>
+                        <Link href="/" className="text-gray-300 hover:text-white transition-colors duration-200">Home</Link>
                     </motion.li>
                     <motion.li
                         whileHover={{ y: -2 }}
                         transition={{ duration: 0.2 }}
                     >
-                        <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200">About</a>
+                        <Link href="/#about" className="text-gray-300 hover:text-white transition-colors duration-200">About</Link>
                     </motion.li>
                     <motion.li
                         whileHover={{ y: -2 }}
                         transition={{ duration: 0.2 }}
                     >
-                        <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200">Events</a>
+                        <Link href="/events" className="text-gray-300 hover:text-white transition-colors duration-200">Events</Link>
                     </motion.li>
                     <motion.li
                         whileHover={{ y: -2 }}
                         transition={{ duration: 0.2 }}
                     >
-                        <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200">Team</a>
+                        <Link href="/#team" className="text-gray-300 hover:text-white transition-colors duration-200">Team</Link>
                     </motion.li>
                     <motion.li
                         whileHover={{ y: -2 }}
                         transition={{ duration: 0.2 }}
                     >
-                        <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200">Join Us</a>
+                        <Link href="/#join" className="text-gray-300 hover:text-white transition-colors duration-200">Join Us</Link>
                     </motion.li>
                 </ul>
             </motion.nav>
