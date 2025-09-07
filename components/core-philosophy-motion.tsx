@@ -4,7 +4,7 @@ import { motion } from 'motion/react'
 export default function CorePhilosophy() {
   return (
     <motion.div 
-      className="bg-black text-white py-20 px-8 lg:px-16"
+      className="bg-black text-white py-20 px-8 lg:px-16 text-left"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -20,16 +20,16 @@ export default function CorePhilosophy() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.p 
-            className="text-purple-400 text-sm tracking-wider mb-4"
+            className="text-purple-400 text-xl tracking-wider mb-4 font-semibold text-left"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            ABOUT QUANTUS
+            // ABOUT QUANTUS
           </motion.p>
           <motion.h2 
-            className="text-4xl lg:text-5xl font-bold"
+            className="text-2xl lg:text-3xl font-bold text-left"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
@@ -38,7 +38,7 @@ export default function CorePhilosophy() {
             Redefining the Learning Experience in Quantum Technology
           </motion.h2>
           <motion.p 
-            className="text-lg text-gray-300 mt-6 max-w-4xl mx-auto"
+            className="text-lg text-gray-300 mt-6 max-w-4xl text-left"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}

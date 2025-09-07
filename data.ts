@@ -11,6 +11,7 @@ export interface Event {
   eventType: 'conference' | 'meetup' | 'workshop' | 'hackathon' | 'exhibition' | 'other';
   eventDescription: string;
   expectedParticipants: number;
+  eventImageUrl?: string; // Optional image URL for the event
   eventSocialMedia: {
     twitter?: string;
     instagram?: string;

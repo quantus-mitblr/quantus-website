@@ -19,7 +19,6 @@ export default function EventPage({ params }: EventPageProps) {
   return <EventPageClient event={event} />
 }
 
-// Generate static params for all events
 export async function generateStaticParams() {
   const slugs = getAllEventSlugs()
   return slugs.map((slug) => ({

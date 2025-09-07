@@ -4,6 +4,7 @@ import { motion } from 'motion/react'
 export default function AboutUs() {
   return (
     <motion.div 
+      id='about'
       className="bg-gradient-to-br from-black via-gray-900 to-slate-900 text-white py-20 px-8 lg:px-16"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -20,13 +21,13 @@ export default function AboutUs() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.p 
-            className="text-purple-400 text-sm tracking-wider mb-4"
+            className="text-purple-400 text-xl tracking-wider mb-4 font-semibold"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            ABOUT US
+            // ABOUT US
           </motion.p>
           <motion.h2 
             className="text-4xl lg:text-5xl font-bold mb-6"
@@ -80,7 +81,7 @@ export default function AboutUs() {
             Meet The Team
           </motion.button>
           <motion.button 
-            className="bg-transparent border-2 border-purple-400 hover:bg-purple-400 hover:text-black text-purple-400 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
+            className="bg-transparent border-2 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
             whileHover={{ 
               scale: 1.05,
               backgroundColor: "rgba(147, 51, 234, 1)",

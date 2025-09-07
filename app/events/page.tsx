@@ -3,6 +3,8 @@ import React from 'react'
 import { motion } from 'motion/react'
 import Link from 'next/link'
 import { events } from '../../data'
+import { ArrowRight, Calendar, ImageIcon, Pin, Users } from 'lucide-react'
+import Image from 'next/image'
 
 export default function EventsPage() {
   const getEventTypeColor = (eventType: string) => {
@@ -75,12 +77,12 @@ export default function EventsPage() {
         <div className="relative z-10 px-8 lg:px-16">
           <div className="max-w-6xl mx-auto text-center">
             <div className="mb-8">
-              <Link 
-                href="/" 
+              <Link
+                href="/"
                 className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="mr-2">
-                  <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 Back to Home
               </Link>
@@ -112,24 +114,58 @@ export default function EventsPage() {
         className="py-20 px-8 lg:px-16"
       >
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8">
             {events.map((event, index) => (
               <div
                 key={event.id}
-                className="bg-slate-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 relative overflow-hidden group"
+                className="bg-slate-800/50 grid grid-cols-1 sm:grid-cols-2 backdrop-blur-sm border border-gray-700/50 rounded-2xl  relative overflow-hidden group py-3"
               >
-                {/* Floating quantum particles */}
-                <div
-                  className="absolute top-4 right-4 w-3 h-3 rounded-full bg-blue-400"
-                />
+                <div className="flex flex-col sm:flex-row py-4 px-6 gap-6 justify-center items-center">
+                  <div className="flex flex-col text-center">
+                    <div className="font-bold">
+                      {new Date(event.eventStartDate).toLocaleDateString('en-IN', {
+                        month: 'short',
+                        timeZone: 'Asia/Kolkata'
+                      }).toUpperCase()}
+                    </div>
+                    <div className="mt-2 border "></div>
+                    <div className="text-4xl font-bold">
+                      {new Date(event.eventStartDate).toLocaleDateString('en-IN', {
+                        day: '2-digit',
+                        timeZone: 'Asia/Kolkata'
+                      }).toUpperCase()}
+                    </div>
+                    <div className="mt-2 border "></div>
+                    <div className="font-bold">
+                      {new Date(event.eventStartDate).toLocaleDateString('en-IN', {
+                        year: 'numeric',
+                        timeZone: 'Asia/Kolkata'
+                      }).toUpperCase()}
+                    </div>
+                  </div>
+                  {
+                    event.eventImageUrl ? (
+                      <Image
+                        src={event.eventImageUrl}
+                        width={450}
+                        height={850}
+                        alt={event.eventName}
+                        className=" object-cover h-full bg-gray-500 rounded-lg"
+                      />
+                    ) : (
+                      <div className="w-[450px] h-[400px] bg-gray-500 rounded-lg flex items-center justify-center text-5xl">
+                        <ImageIcon/>
+                      </div>
+                    )
+                  }
+                </div>
 
-                <div className="relative z-10">
+                <div className="relative z-10 p-8">
                   {/* Event Type Badge */}
                   <div className="flex items-center justify-between mb-4">
                     <span className={`inline-block px-3 py-1 rounded-full border text-xs font-semibold uppercase tracking-wider ${getEventTypeBg(event.eventType)} ${getEventTypeColor(event.eventType)}`}>
                       {event.eventType}
                     </span>
-                    <span className="text-2xl">{getHostingIcon(event.hosting)}</span>
                   </div>
 
                   {/* Event Title */}
@@ -144,26 +180,26 @@ export default function EventsPage() {
 
                   {/* Event Details */}
                   <div className="space-y-2 mb-6">
-                    <p className="text-sm text-gray-400">
-                      📅 {new Date(event.eventStartDate).toLocaleDateString('en-IN', { timeZone: 'Asia/Kolkata' })}
-                      {event.eventEndDate !== event.eventStartDate && 
+                    <p className="text-sm text-gray-400 flex items-center gap-2">
+                      <Calendar /> {new Date(event.eventStartDate).toLocaleDateString('en-IN', { timeZone: 'Asia/Kolkata' })}
+                      {event.eventEndDate !== event.eventStartDate &&
                         ` - ${new Date(event.eventEndDate).toLocaleDateString('en-IN', { timeZone: 'Asia/Kolkata' })}`
                       }
                     </p>
-                    <p className="text-sm text-gray-400">
-                      📍 {event.eventCity}
+                    <p className="text-sm text-gray-400 flex items-center gap-2">
+                      <Pin /> {event.eventCity}
                     </p>
-                    <p className="text-sm text-gray-400">
-                      👥 {event.expectedParticipants} participants
+                    <p className="text-sm text-gray-400 flex items-center gap-2">
+                      <Users /> {event.expectedParticipants} participants
                     </p>
                   </div>
 
                   {/* View Details Button */}
-                  <Link 
+                  <Link
                     href={`/events/${event.slug}`}
-                    className="inline-block w-full text-center bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform group-hover:scale-105"
+                    className="w-full text-center flex gap-2 font-semibold py-3 pr-4 rounded-lg transition-all duration-300 transform"
                   >
-                    View Details
+                    View Event Details <ArrowRight />
                   </Link>
                 </div>
               </div>

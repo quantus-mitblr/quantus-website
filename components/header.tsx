@@ -13,7 +13,7 @@ export default function Header() {
     }, [])
     return (
         <motion.div 
-            className="w-full py-6 px-8 lg:px-16 bg-black flex items-center justify-between relative z-20"
+            className="w-full py-6 px-8 lg:px-16 bg-gradient-to-r from-gray-950 to-purple-900 flex items-center justify-between relative z-20"
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -48,36 +48,36 @@ export default function Header() {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
             >
-                <ul className="flex space-x-8">
+                <ul className="flex space-x-8 font-bold">
                     <motion.li
                         whileHover={{ y: -2 }}
                         transition={{ duration: 0.2 }}
                     >
-                        <Link href="/" className="text-gray-300 hover:text-white transition-colors duration-200">Home</Link>
+                        <Link href="/" className="text-gray-300 hover:text-white hover:underline transition-all duration-200">Home</Link>
                     </motion.li>
                     <motion.li
                         whileHover={{ y: -2 }}
                         transition={{ duration: 0.2 }}
                     >
-                        <Link href="/#about" className="text-gray-300 hover:text-white transition-colors duration-200">About</Link>
+                        <Link href="/#about" className="text-gray-300 hover:text-white hover:underline transition-all duration-200">About</Link>
                     </motion.li>
                     <motion.li
                         whileHover={{ y: -2 }}
                         transition={{ duration: 0.2 }}
                     >
-                        <Link href="/events" className="text-gray-300 hover:text-white transition-colors duration-200">Events</Link>
+                        <Link href="/events" className="text-gray-300 hover:text-white hover:underline transition-all duration-200">Events</Link>
                     </motion.li>
                     <motion.li
                         whileHover={{ y: -2 }}
                         transition={{ duration: 0.2 }}
                     >
-                        <Link href="/#team" className="text-gray-300 hover:text-white transition-colors duration-200">Team</Link>
+                        <Link href="/#team" className="text-gray-300 hover:text-white hover:underline transition-all duration-200">Team</Link>
                     </motion.li>
                     <motion.li
                         whileHover={{ y: -2 }}
                         transition={{ duration: 0.2 }}
                     >
-                        <Link href="/#join" className="text-gray-300 hover:text-white transition-colors duration-200">Join Us</Link>
+                        <Link href="/#join" className="text-gray-300 hover:text-white hover:underline transition-all duration-200">Join Us</Link>
                     </motion.li>
                 </ul>
             </motion.nav>

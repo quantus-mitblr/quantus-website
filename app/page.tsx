@@ -7,6 +7,7 @@ import AboutUs from "@/components/about-us";
 import Events from "@/components/events";
 import JoinUs from "@/components/join-us";
 import Image from "next/image";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -14,9 +15,8 @@ export default function Home() {
       <Header/>
       <HeroSection/>
       <CorePhilosophy/>
-      <AboutUs/>
       <Events/>
-      <JoinUs/>
+      <Footer/>
     </div>
   );
 }

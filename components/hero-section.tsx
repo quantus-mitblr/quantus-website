@@ -1,10 +1,16 @@
 import React from 'react'
 import { motion } from 'motion/react'
+import { Climate_Crisis } from 'next/font/google'
+
+const climateCrisis = Climate_Crisis({
+  subsets: ['latin'],
+  weight: ['400'],
+})
 
 export default function HeroSection() {
   return (
     <motion.div 
-      className="min-h-screen bg-black text-white relative overflow-hidden"
+      className="min-h-screen bg-gradient-to-tl from-gray-950 via-purple-900 to-gray-950 text-white relative overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -111,6 +117,7 @@ export default function HeroSection() {
           }}
           transition={{ duration: 2.8, repeat: Infinity, delay: 2 }}
         ></motion.div>
+        
         <motion.div 
           className="absolute bottom-20 right-20 w-2 h-2 rounded-full bg-indigo-400/60"
           animate={{ 
@@ -133,7 +140,7 @@ export default function HeroSection() {
           >
             <div>
               <motion.h1 
-                className="text-5xl lg:text-7xl font-bold leading-tight mb-6"
+                className="text-5xl lg:text-7xl font-bold leading-tight mb-2"
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
@@ -142,12 +149,13 @@ export default function HeroSection() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.7 }}
+                  className={climateCrisis.className}
                 >
                   QUANTUS
                 </motion.span>
               </motion.h1>
               <motion.h2 
-                className="text-2xl lg:text-3xl font-semibold mb-6 text-blue-400"
+                className={`text-xl tracking-wide font-black uppercase mb-6 text-gray-300 ${climateCrisis.className}`}
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.9 }}
@@ -155,15 +163,7 @@ export default function HeroSection() {
                 Reimagining Reality with Quantum Possibility
               </motion.h2>
               <motion.p 
-                className="text-lg lg:text-xl text-gray-300 leading-relaxed max-w-lg mb-4"
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 1.1 }}
-              >
-                Empowering Students to explore, innovate and collaborate in quantum computing.
-              </motion.p>
-              <motion.p 
-                className="text-base lg:text-lg text-gray-400 leading-relaxed max-w-lg"
+                className="text-base lg:text-lg text-gray-300 leading-relaxed max-w-lg"
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 1.3 }}
@@ -173,17 +173,11 @@ export default function HeroSection() {
             </div>
             
             <motion.button 
-              className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg shadow-purple-600/30"
-              initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1.5 }}
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 20px 40px rgba(147, 51, 234, 0.4)"
-              }}
-              whileTap={{ scale: 0.98 }}
+              className={`bg-white text-purple-800 px-8 py-4 rounded-full font-black text-lg transition-all duration-300 shadow-lg shadow-purple-600/30`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
             >
-              Join Our Community
+              JOIN US
             </motion.button>
           </motion.div>
           
