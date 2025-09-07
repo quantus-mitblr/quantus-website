@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import Link from 'next/link'
@@ -193,11 +195,21 @@ export default function Events() {
                     </p>
                     <div className="flex flex-col gap-2 mb-4">
                       <p className="text-sm text-gray-400">
-                        Start: {new Date(event.eventStartDate).toLocaleDateString()}
+                        Start: {new Date(event.eventStartDate).toLocaleDateString('en-GB', { 
+                          timeZone: 'Asia/Kolkata',
+                          day: 'numeric',
+                          month: 'numeric', 
+                          year: 'numeric'
+                        })}
                       </p>
                       {event.eventEndDate !== event.eventStartDate && (
                         <p className="text-sm text-gray-400">
-                          End: {new Date(event.eventEndDate).toLocaleDateString()}
+                          End: {new Date(event.eventEndDate).toLocaleDateString('en-GB', {
+                            timeZone: 'Asia/Kolkata',
+                            day: 'numeric',
+                            month: 'numeric',
+                            year: 'numeric'
+                          })}
                         </p>
                       )}
                     </div>

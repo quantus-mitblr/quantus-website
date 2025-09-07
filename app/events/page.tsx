@@ -55,30 +55,18 @@ export default function EventsPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
-      <motion.div 
+      <div
         className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 py-24"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
       >
         {/* Animated background */}
         <div className="absolute inset-0 overflow-hidden">
           {Array.from({ length: 30 }).map((_, i) => (
-            <motion.div
+            <div
               key={i}
               className="absolute w-1 h-1 bg-blue-400 rounded-full"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                y: [0, -20, 0],
-                opacity: [0.2, 0.8, 0.2],
-              }}
-              transition={{
-                duration: 3 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
               }}
             />
           ))}
@@ -86,12 +74,7 @@ export default function EventsPage() {
 
         <div className="relative z-10 px-8 lg:px-16">
           <div className="max-w-6xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className="mb-8"
-            >
+            <div className="mb-8">
               <Link 
                 href="/" 
                 className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
@@ -101,7 +84,7 @@ export default function EventsPage() {
                 </svg>
                 Back to Home
               </Link>
-            </motion.div>
+            </div>
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
@@ -122,40 +105,22 @@ export default function EventsPage() {
             </motion.p>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Events Grid */}
-      <motion.div
+      <div
         className="py-20 px-8 lg:px-16"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
       >
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {events.map((event, index) => (
-              <motion.div
+              <div
                 key={event.id}
                 className="bg-slate-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 relative overflow-hidden group"
-                initial={{ y: 50, opacity: 0, scale: 0.9 }}
-                whileInView={{ y: 0, opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: "0 20px 40px rgba(147, 51, 234, 0.2)",
-                  y: -10
-                }}
               >
                 {/* Floating quantum particles */}
-                <motion.div 
+                <div
                   className="absolute top-4 right-4 w-3 h-3 rounded-full bg-blue-400"
-                  animate={{ 
-                    y: [0, -10, 0],
-                    opacity: [0.5, 1, 0.5]
-                  }}
-                  transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
                 />
 
                 <div className="relative z-10">
@@ -180,9 +145,9 @@ export default function EventsPage() {
                   {/* Event Details */}
                   <div className="space-y-2 mb-6">
                     <p className="text-sm text-gray-400">
-                      📅 {new Date(event.eventStartDate).toLocaleDateString()}
+                      📅 {new Date(event.eventStartDate).toLocaleDateString('en-IN', { timeZone: 'Asia/Kolkata' })}
                       {event.eventEndDate !== event.eventStartDate && 
-                        ` - ${new Date(event.eventEndDate).toLocaleDateString()}`
+                        ` - ${new Date(event.eventEndDate).toLocaleDateString('en-IN', { timeZone: 'Asia/Kolkata' })}`
                       }
                     </p>
                     <p className="text-sm text-gray-400">
@@ -201,11 +166,11 @@ export default function EventsPage() {
                     View Details
                   </Link>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   )
 }
