@@ -4,13 +4,14 @@ import { getEventBySlug, getAllEventSlugs } from '../../../data'
 import EventPageClient from './EventPageClient'
 
 interface EventPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
-export default function EventPage({ params }: EventPageProps) {
-  const event = getEventBySlug(params.slug)
+export default async function EventPage({ params }: EventPageProps) {
+  const { slug } = await params
+  const event = getEventBySlug(slug)
 
   if (!event) {
     notFound()
